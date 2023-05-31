@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 body{
+   
     background-image: url("../assets/bg.jpg");
-     background-repeat:no-repeat;
-    min-height:100vh;
+    background-repeat:no-repeat;
+    /* max-height:100vh;   */
     background-size:105vw 100vh; 
     display:flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    padding:1rem;
+    
 
 }
 .top{
+    margin-top:5rem;
     border:0.05rem solid black;
     border-radius:4px;
     background-color:black;
@@ -32,4 +36,6 @@ body{
     padding:0.8rem;
     background-color:black;
     color:white;
+    margin-bottom:2rem;
+    
 }
