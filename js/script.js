@@ -133,7 +133,13 @@ function Collide(obj){
                 return true;}
                 
  }
-
+ 
+function isFoodOnSnake(fooditem) {
+    for (let i = 1; i < snakeobj.length; i++) {
+        if (snakeobj[i].x === fooditem.x && snakeobj[i].y === fooditem.y) {
+            return true;
+        }
+    }
 
 function gamerun(){
    
@@ -164,7 +170,11 @@ if(snakeobj[0].x == fooditem.x && snakeobj[0].y==fooditem.y){
     let a=1;
     let b=17;
     // fooditem={x:Math.floor(Math.random() * (b - a + 1)) + a,y:Math.floor(Math.random() * (b - a + 1)) + a};
-    fooditem = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())};
+    do{
+    fooditem = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())};}
+    while(isFoodOnSnake(fooditem));
+
+
     score++;
     if(score>Highscoreval){
         Highscoreval = score;
@@ -235,4 +245,4 @@ restart.addEventListener("click",()=>{
 
 
 
-
+}
