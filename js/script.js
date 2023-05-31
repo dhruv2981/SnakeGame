@@ -5,9 +5,9 @@ let dirn= {
 };
 
 //so that snake ki initial posn fixed 
-const foodSound= new Audio('../assets/food.mp3');
-const gameOversound= new Audio('../assets/gameover.mp3');
-const moveSound= new Audio('../assets/move.mp3');
+const foodSound= new Audio('./assets/food.mp3');
+const gameOversound= new Audio('./assets/gameover.mp3');
+const moveSound= new Audio('./assets/move.mp3');
 let board=document.querySelector(".board");
 let over=document.querySelector(".Gameover");
 let restart=document.querySelector(".restart");
@@ -139,7 +139,8 @@ function isFoodOnSnake(fooditem) {
         if (snakeobj[i].x === fooditem.x && snakeobj[i].y === fooditem.y) {
             return true;
         }
-    }
+    }return false;
+}
 
 function gamerun(){
    
@@ -149,7 +150,7 @@ function gamerun(){
 
 //updating the snake
 if(Collide(snakeobj)){
-    
+   
     dirn={x:0,y:0};
     over.style.display="block";
     board.innerHTML="";
@@ -245,4 +246,4 @@ restart.addEventListener("click",()=>{
 
 
 
-}
+
